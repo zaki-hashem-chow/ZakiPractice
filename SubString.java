@@ -163,7 +163,7 @@ public class SubString extends CharType{
         
     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       }       
+       }                                                                   //There is no problem after this line
         return subStringArray;
     }
     
