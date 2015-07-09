@@ -17,7 +17,7 @@ public class SubString extends CharType{
     private String chr1 = null;
     
     
-    private boolean sameOperator(){
+    private boolean sameOperator(){                                             //This Methode To see if there are more then 1 operator togather(continuasly) in the charArray
         boolean sameOperator = false;
         if(charTypeArray.get(i + 1) == null){
             sameOperator = false;
@@ -30,9 +30,9 @@ public class SubString extends CharType{
     }
        
     
-    private void arrayMaker(){
-        String expression = null;
-        Scanner sc = new Scanner(System.in);
+    private void arrayMaker(){                                                  //This method is to create charArray(arrayList) of single characters from the string input
+        String expression = null;                                               //and another charTypeArray(arrayList) of characterTypes(for characters
+        Scanner sc = new Scanner(System.in);                                    //stored in charArray) returned from CharType Class passing same string input.
         System.out.println("Enter Calculation String then press Return: ");        
         expression = sc.nextLine();
         expression = expression.replaceAll(" ", "");     
@@ -64,8 +64,8 @@ public class SubString extends CharType{
             IF:
             
             if(charArray.size()-i < 2){                 
-                switch(chrType){
-                        case "digit": {
+                switch(chrType){                                                //for last the character of the string ### I think 
+                        case "digit": {                                         //this part is ok up to big comment line below
                             if(charTypeArray.get(i-1)=="digit"){
                                 subStringText = subStringText + "" + chr1;
                                 subStringArray.add(j, subStringText);
@@ -87,9 +87,10 @@ public class SubString extends CharType{
                 }
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::                 
 
-            }else{ 
-                if(charArray.size() >= 1){
-                    
+            }else{                                                              //this part (After the commented line above) 
+                                                                                //is for the middle portion of the string 
+                if(charArray.size() >= 1){                                      //(after first Character, before last character)
+                                                                                // I am sure that the problem is in this portion
                     if(i > 0){
                         switch(chrType){
                            case "digit": {
@@ -139,7 +140,7 @@ public class SubString extends CharType{
                            default: System.out.println("Invalid First Craracter!!");
                                break FOR;
                            } 
-                    }else{
+                    }else{                                                          //for first character of the string ## I think this part is ok too
                         
                         switch(chrType){
                             case "digit": {                           
