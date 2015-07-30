@@ -11,8 +11,8 @@ public class SubString extends CharType{
        
     private static ArrayList<String> charTypeArray = new ArrayList<String>();
     private static ArrayList<String> charArray = new ArrayList<String>();
-    public static ArrayList<String> subStringArray = new ArrayList<String>();
-    static String subStringText;
+    private static ArrayList<String> subStringArray = new ArrayList<String>();
+    private static String subStringText;
     private int i;
     private String chr1 = null;
     
@@ -47,6 +47,9 @@ public class SubString extends CharType{
     
     public ArrayList subStringMaker(ArrayList charTypeArray, ArrayList charArray){
         
+        SubString sc = new SubString();
+        sc.arrayMaker();
+        
         charTypeArray = SubString.charTypeArray;
         charArray = SubString.charArray;        
         String chrType = null;
@@ -68,12 +71,12 @@ public class SubString extends CharType{
                         case "digit": {                                         //this part is ok up to big comment line below
                             if(charTypeArray.get(i-1)=="digit"){
                                 subStringText = subStringText + "" + chr1;
-                                subStringArray.add(j, subStringText);
+                                subStringArray.add(subStringText);
                                 break FOR;
                                 
                              }else if(charTypeArray.get(i-1)=="operator"){
                                 subStringText = chr1;
-                                subStringArray.add(j, subStringText);
+                                subStringArray.add(subStringText);
                                 break FOR;
                              }
                              break FOR;}
@@ -84,8 +87,7 @@ public class SubString extends CharType{
                        
                         default: System.out.println("Invalid First Craracter!!");
                             break FOR;
-                }
-//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::                 
+                }                 
 
             }else{                                                              //this part (After the commented line above) 
                                                                                 //is for the middle portion of the string 
@@ -93,8 +95,7 @@ public class SubString extends CharType{
                                                                                 // I am sure that the problem is in this portion
                     if(i > 0){
                         switch(chrType){
-                           case "digit": {
-                               
+                           case "digit": {                               
                                 if(charTypeArray.get(i-1)=="digit"){
                                     subStringText = subStringText + "" + chr1; 
                                     break IF;
@@ -110,9 +111,9 @@ public class SubString extends CharType{
                                if(chr1.contains("-")){ 
                                    
                                     if(sameOperator() == false){
-                                       subStringArray.add(j, subStringText);
+                                       subStringArray.add(subStringText);
                                        j++;
-                                       subStringArray.add(j, chr1);
+                                       subStringArray.add(chr1);
                                        subStringText = "";
                                        
                                     }else{
@@ -124,9 +125,9 @@ public class SubString extends CharType{
                                }else if(chr1.contains("+")){
                                    
                                     if(sameOperator() == false){
-                                    subStringArray.add(j, subStringText);
+                                    subStringArray.add(subStringText);
                                     j++;
-                                    subStringArray.add(j, chr1);
+                                    subStringArray.add(chr1);
                                     subStringText = "";
                                     
                                  }else{
@@ -160,19 +161,16 @@ public class SubString extends CharType{
                     break FOR;
                 }           
             }   
-        
-    
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
        }       
         return subStringArray;
     }
     
               
- public static void main(String[] args){  
-     
-       SubString sc = new SubString();
-       sc.arrayMaker();
-       ArrayList al = sc.subStringMaker(charTypeArray, charArray);
-             
-     System.out.println("Result ======>> "+subStringArray);         
-}}
+// public static void main(String[] args){  
+//     
+//       SubString sc = new SubString();
+//       ArrayList al = sc.subStringMaker(charTypeArray, charArray);
+//             
+//     System.out.println("Result ======>> "+subStringArray);         
+//}
+}
