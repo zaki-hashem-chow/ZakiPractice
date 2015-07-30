@@ -10,19 +10,18 @@ public class Calculator2 extends SubString{
     
 
     
-//   static ArrayList<String> subStringArray = new ArrayList<String>();
-   
-    public static void main(String[] args){  
-        
 
-//        for(SubStringArray
-//        
-//        
-//        
-//     System.out.println(SubString.SubStringArray);   
-      
-}
    
     
+   
+    
+    
+    
+    
+    public static void main(String[] args){  
+        
+ 
+      
+    }
 }
 
