@@ -30,7 +30,7 @@ public class CharType {
             type = "operator";
             
         }else if(chr == '.'){
-            type = "dot";
+            type = "point";
                     
         }else{
             type = "err";
