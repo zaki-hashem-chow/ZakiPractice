@@ -149,7 +149,7 @@ public class SubString extends CharType{
                                  break IF;} 
 
                             case "operator": {                           
-                                System.out.println("Invalid First Craracter!!");     //////change this portion to enable operator at 1st character of string
+                                System.out.println("Invalid First Craracter!!");     //////change this portion to anable operator at 1st character of string
                                  break FOR; }  
 
                         default: System.out.println("Invalid First Craracter!!");
@@ -164,16 +164,13 @@ public class SubString extends CharType{
        }       
         return subStringArray;
     }
-   
-    
-    
     
               
- public static void main(String[] args){  
-     
-       SubString sc = new SubString();
-       ArrayList al = sc.subStringMaker(charTypeArray, charArray);
-             
-     System.out.println("Result ======>> "+subStringArray);         
-}
+// public static void main(String[] args){  
+//     
+//       SubString sc = new SubString();
+//       ArrayList al = sc.subStringMaker(charTypeArray, charArray);
+//             
+//     System.out.println("Result ======>> "+subStringArray);         
+//}
 }
